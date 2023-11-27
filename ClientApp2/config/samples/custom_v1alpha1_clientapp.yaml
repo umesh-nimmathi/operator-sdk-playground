@@ -1,0 +1,26 @@
+apiVersion: custom.clinia.com/v1alpha1
+kind: Clientapp
+metadata:
+  labels:
+    app.kubernetes.io/name: clientapp
+    app.kubernetes.io/instance: clientapp-sample
+    app.kubernetes.io/part-of: clientapp2
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: clientapp2
+  name: clientapp-sample
+spec:
+   # TODO(user): Add fields here
+  name : nginx-deployment
+  replicas : 5
+  resources : 
+    cpu: "1000m"  # 500 milliCPU
+    memory: "512Mi"  # 512 Megabytes
+  env: 
+  - name : DEMO_ENV
+    value : "Hello world"
+  image : nginx:1.25
+  host: nginx.example.com
+  port : 80
+status:
+  available: true
+  url: http://example-clientapp.local

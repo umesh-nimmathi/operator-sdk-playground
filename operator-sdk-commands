@@ -1,0 +1,2 @@
+To create new operator : operator-sdk init --domain examples.com --repo podscale-operator
+To create API and CRD  : operator-sdk create api --group cache --version v1alpha1 --kind Memcached --resource --controller
